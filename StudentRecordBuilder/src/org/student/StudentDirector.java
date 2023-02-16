@@ -7,13 +7,13 @@ public class StudentDirector {
         this.studentBuilder = studentBuilder;
     }
 
-    public Student construct() {
-        studentBuilder.createNewStudent();
-        studentBuilder.buildName();
-        studentBuilder.buildAddress();
-        studentBuilder.buildProgramme();
-        studentBuilder.buildGrades();
-        studentBuilder.buildAdditionalDetails();
-        return studentBuilder.getStudent();
+    public void construct() {
+        studentBuilder.buildName("Sherlock Holmes");
+        studentBuilder.buildAddress(new Address("London","UK","221B Baker St","NW1 6XE"));
+        studentBuilder.buildProgramme(new Programme("CS","Computer Science","Computer Science",""));
+        int[] grades = {90,80,95,85};
+        studentBuilder.buildGrades(grades);
+        studentBuilder.buildAdditionalDetails("I am sherlock holmes, I can solve this problem in O(1) time");
     }
+
 }

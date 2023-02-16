@@ -1,39 +1,42 @@
 package org.student;
 
-public class ConcreteStudentBuilder extends StudentBuilder {
+public class ConcreteStudentBuilder implements  StudentBuilder {
 
-    @Override
-    public void buildName() {
-        this.student.setName("Sherlock Holmes");
+    private Student student;
+
+
+    public ConcreteStudentBuilder()
+    {
+        student = new Student();
     }
 
     @Override
-    public void buildAddress() {
-        Address address = new Address();
-        address.setCity("London");
-        address.setState("UK");
-        address.setStreet("221B Baker St");
-        address.setZip("NW1 6XE");
+    public void buildName(String name) {
+        this.student.setName(name);
+    }
+
+    @Override
+    public void buildAddress(Address address) {
         student.setAddress(address);
     }
 
     @Override
-    public void buildProgramme() {
-        Programme programme = new Programme();
-        programme.setName("Computer Science");
-        programme.setType("Bachelor");
-        programme.setCode("CS");
-        programme.setDepartment("Computer Science");
+    public void buildProgramme(Programme programme) {
         student.setProgramme(programme);
     }
 
     @Override
-    public void buildGrades() {
-        student.setGrades(new int[] {90, 80, 95, 85});
+    public void buildGrades(int[] grades) {
+        student.setGrades(grades);
     }
 
     @Override
-    public void buildAdditionalDetails() {
-        student.setAdditionalInfo("I am sherlock holmes, I can solve this problem in O(1) time");
+    public void buildAdditionalDetails(String additionalInfo) {
+        student.setAdditionalInfo(additionalInfo);
+    }
+
+    public Student getResult()
+    {
+        return this.student;
     }
 }

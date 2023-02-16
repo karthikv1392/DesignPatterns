@@ -1,20 +1,15 @@
 package org.student;
 
-public abstract class StudentBuilder {
+public interface  StudentBuilder {
 
-    protected Student student;
+    public abstract void buildName(String name);
 
-    public Student getStudent() {
-        return this.student;
-    }
+    public abstract void buildAddress(Address address);
 
-    public void createNewStudent() {
-        this.student = new Student();
-    }
+    public abstract void buildProgramme(Programme programme);
 
-    public abstract void buildName();
-    public abstract void buildAddress();
-    public abstract void buildProgramme();
-    public abstract void buildGrades();
-    public abstract void buildAdditionalDetails();
+    public abstract void buildGrades(int[] grades);
+
+    public abstract void buildAdditionalDetails(String additionalInfo);
+
 }

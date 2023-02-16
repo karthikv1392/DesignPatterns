@@ -4,7 +4,9 @@ public class StudentBuilderDemo {
     public static void main(String[] args) {
         StudentBuilder studentBuilder = new ConcreteStudentBuilder();
         StudentDirector studentDirector = new StudentDirector(studentBuilder);
-        Student student = studentDirector.construct();
+        studentDirector.construct();
+
+        Student student = ((ConcreteStudentBuilder) studentBuilder).getResult();
         System.out.println(student);
         System.out.println(student.getAdditionalInfo());
     }
