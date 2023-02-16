@@ -13,7 +13,7 @@ public class StudentDirector {
         studentBuilder.buildProgramme(new Programme("CS","Computer Science","Computer Science",""));
         int[] grades = {90,80,95,85};
         studentBuilder.buildGrades(grades);
-        studentBuilder.buildAdditionalDetails("I am sherlock holmes, I can solve this problem in O(1) time");
+        studentBuilder.buildAdditionalDetails("I am Sherlock Holmes, I can solve this problem in O(1) time");
     }
 
 }
